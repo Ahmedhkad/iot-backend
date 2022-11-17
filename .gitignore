@@ -1,0 +1,10 @@
+.docker/db
+.docker/mosquitto/*
+!.docker/mosquitto/config
+ 
+.docker/apache/server.pem
+.docker/apache/server-key.pem
+secrets.php
+
+vendor/
+/src/secrets.php
