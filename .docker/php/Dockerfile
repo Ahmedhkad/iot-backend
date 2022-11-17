@@ -46,5 +46,7 @@ WORKDIR /var/www/html
 RUN a2enmod rewrite
 RUN a2enmod ssl
 
+RUN composer --version && php -v
+
 EXPOSE 80
 EXPOSE 443
