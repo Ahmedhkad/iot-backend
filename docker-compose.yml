@@ -1,8 +1,8 @@
 version: "3"
 services:
 #------------------------------ MQTT
-  iot-mosquitto:
-    container_name: iot-mosquitto
+  iot-dashboard-mosquitto:
+    container_name: iot-dashboard-mosquitto
     image: eclipse-mosquitto
     restart: always
     networks:
@@ -24,6 +24,7 @@ services:
       - .docker/apache/server-key.pem:/etc/ssl/private/server-key.pem
       - .docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./src:/var/www/html
+    
     ports:
       - 9888:80
       - 443:443
@@ -65,3 +66,7 @@ services:
 networks:
   mynetwork:
     driver: bridge
+
+
+# docker exec -it -d iot-dashboard-apache /bin/bash
+# docker exec iot-dashboard-apache composer install
